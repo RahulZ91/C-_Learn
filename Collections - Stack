@@ -1,0 +1,54 @@
+// Operations with Stack
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Learn_Interfaces
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Stack s = new Stack();
+
+            // 1. Púsh function to add items to stack
+            s.Push(17);
+            s.Push(88);
+            s.Push('a');
+            Console.WriteLine("\nStack contents LIFO\n");
+            foreach(object o in s)
+            {
+                Console.WriteLine(o);
+            }
+
+            // 2. Use Peek to check the first value
+            Console.WriteLine("\nLook at the firt value " + s.Peek());
+
+            // 3. Remove the top value from the stack
+            Console.WriteLine("\nStack contents LIFO\n");
+            foreach (object o in s)
+            {
+                Console.WriteLine(o);
+            }
+            s.Pop();
+            Console.WriteLine("\nAfter POP operation\n");
+            foreach (object o in s)
+            {
+                Console.WriteLine(o);
+            }
+
+            // 4. Contains a specific entry
+            Console.WriteLine("\nDoes it contain the entry ");
+            Console.WriteLine(s.Contains(4));
+
+            // 5. Copy values to array
+            object[] arr = s.ToArray();
+            Console.WriteLine("\nArray");
+            Console.WriteLine(string.Join(",",arr));
+        }
+    }
+
+    
+}
