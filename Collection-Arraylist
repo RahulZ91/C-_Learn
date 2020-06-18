@@ -1,0 +1,92 @@
+// Arraylist and associated methods
+
+using System;
+using System.Collections;
+
+namespace Learn_Interfaces
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Arraylist creation and methods
+            ArrayList aList = new ArrayList();
+
+            // 1. add items to the ArrayList
+            aList.Add("Rahul");
+            aList.Add("Sachin");
+            aList.Add("Saurav");
+            aList.Add("Anil");
+            aList.Add("Laxman");
+            aList.Add("Rahul");
+            aList.Add("Sachin");
+            aList.Add("Saurav");
+            aList.Add("Saurav");
+
+
+            // Display items in the list
+            foreach (object a in aList )
+            {
+                Console.WriteLine(a);
+            }
+
+            // 2. get the count óf the items in the list
+            Console.WriteLine("\nThe number of items in the list are "+ aList.Count);
+
+            // 3. get the capacity of the arraýlist
+            Console.WriteLine("\nCapacity of the list " + aList.Capacity);
+
+            // 4. Sort the items . can be done if the elements are of the same type
+            aList.Sort();
+            Console.WriteLine("\nSorted List\n");
+            foreach(object o in aList)
+            {
+                Console.WriteLine(o);
+            }
+            
+            
+            // 5.Reversed List
+            // does not sort..reverses as such
+            aList.Reverse();
+            Console.WriteLine("\nReversed List\n");
+            foreach (object o in aList)
+            {
+                Console.WriteLine(o);
+            }
+
+            // 6.Insert value at an index
+            aList.Insert(3, "Xamarin");
+            Console.WriteLine("\n");
+            foreach (object o in aList)
+            {
+                Console.WriteLine(o);
+            }
+            aList.Sort();
+            Console.WriteLine("\nSorted List\n");
+            foreach (object o in aList)
+            {
+                Console.WriteLine(o);
+            }
+
+            //6. Get the index of Xamarin
+            Console.WriteLine("\nIndex of Xamarin in the list "+aList.IndexOf("Xamarin"));
+
+            // 7. Removing an items from specified index off the list
+            Console.WriteLine("\nRemove item off the list");
+            aList.RemoveRange(6, 4);
+            foreach (object o in aList)
+            {
+                Console.WriteLine(o);
+            }
+
+            // 8. Convert to string array
+            aList.ToArray(typeof(String));
+            Console.WriteLine("\nConvert to the string type of array\n");
+            Console.WriteLine(aList[3]);
+
+
+        }
+    }
+
+    
+}
