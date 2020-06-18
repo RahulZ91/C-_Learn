@@ -1,0 +1,57 @@
+// Operations with Queue
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Learn_Interfaces
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Using the Queue
+
+            // 1. Adding the entries to the queue
+            Queue q = new Queue();
+            q.Enqueue(8);
+            q.Enqueue(77);
+            q.Enqueue(18);
+            q.Enqueue(43);
+            foreach(object o in q)
+            {
+                Console.WriteLine(o);
+            }
+
+            // 2. Checks if the entry is present in the Queue
+            if (q.Contains(77))
+                Console.WriteLine("\nEntry present in Queue\n");
+            else
+                Console.WriteLine("\nEntry not present\n");
+
+            // 3. Remove first entry from the Queue
+            Console.WriteLine("\nQueue before Dequeue op\n");
+            foreach(object o in q)
+            {
+                Console.WriteLine(o);
+            }
+            q.Dequeue();
+            Console.WriteLine("\nQueue after Dequeue op\n");
+            foreach (object o in q)
+            {
+                Console.WriteLine(o);
+            }
+
+            // 4. Check the first element in the Queue
+            Console.WriteLine("\nThe first entry in the Queue is "+q.Peek());
+
+            // 5.Convert to array
+            object[] arr = q.ToArray();
+            foreach (object o in q)
+            {
+                Console.WriteLine(o);
+            }
+
+        }
+    }
