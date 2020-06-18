@@ -1,0 +1,62 @@
+// Methods associated with the dictionary
+
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace Learn_Interfaces
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Dictionary<int, String> MI = new Dictionary<int, String>();
+
+            // 1. Add the values to the dictionary
+            MI.Add(10, "Sachin");
+            MI.Add(29, "Rohit");
+            MI.Add(6, "Bumrah");
+            MI.Add(87, "Ajinkya");
+            Console.WriteLine("Team MI with Jersey numbers");
+            foreach(object o in MI)
+            {
+                Console.WriteLine(o);
+            }
+
+            // 2. Remove a particular value using the key 
+            MI.Remove(87);
+            Console.WriteLine("\nTeam MI with Jersey numbers\n");
+            foreach (object o in MI)
+            {
+                Console.WriteLine(o);
+            }
+
+            // 3. Count the number of entries in the dictionary
+            Console.WriteLine("\nThe number of entries in the list are \n" + MI.Count);
+
+            // 4. Check if the dictionary contains a particular entry
+            if (MI.ContainsKey(10))
+            {
+                Console.WriteLine("\nEntry found ");
+            }
+            else
+                Console.WriteLine("\nEntry not found");
+
+            // 5. Delete all the entries
+            Console.WriteLine("\nBefore using clear\n");
+            foreach(object o in MI)
+            {
+                Console.WriteLine(o);
+            }
+            Console.WriteLine("\nafter clear method");
+            MI.Clear();
+            foreach (object o in MI)
+            {
+                Console.WriteLine(o);
+            }
+        }
+    }
+
+    
+}
